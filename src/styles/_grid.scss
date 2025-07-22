@@ -1,0 +1,63 @@
+// === Bootstrap-style Breakpoints ===
+@use 'sass:math';
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// === Container ===
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  // padding-left: 1rem;
+  // padding-right: 1rem;
+  width: 100%;
+
+  @media (min-width: 576px) { max-width: 540px; }
+  @media (min-width: 768px) { max-width: 720px; }
+  @media (min-width: 992px) { max-width: 960px; }
+  @media (min-width: 1200px) { max-width: 1140px; }
+  @media (min-width: 1400px) { max-width: 1320px; }
+}
+
+.container-fluid {
+  width: 100%;
+  // padding-left: 1rem;
+  // padding-right: 1rem;
+}
+
+// === Row ===
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.row > * {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+}
+
+// === Column Classes (col-{breakpoint}-{1...12}) ===
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 math.percentage(calc($i / 12));
+        max-width: math.percentage(calc($i / 12));
+      }
+    }
+  }
+}
+
+// === Extra: Default .col (auto layout)
+.col {
+  flex: 1 1 0;
+  max-width: 100%;
+}

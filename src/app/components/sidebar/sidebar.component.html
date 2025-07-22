@@ -1,0 +1,13 @@
+<div class="sidebar" [class.closed]="!isOpen">
+  <button *ngIf="isMobile" class="btn btn-ghost toggle-btn" (click)="toggleSidebar()">
+    {{ isOpen ? '←' : '→' }}
+  </button>
+
+  <div class="sidebar-content" *ngIf="isOpen">
+    <h3 class="sidebar-title">Goals</h3>
+    <ul class="sidebar-goals">
+      <li>Learn Japanese</li>
+      <li>Work Project</li>
+    </ul>
+  </div>
+</div>

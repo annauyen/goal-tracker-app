@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/theme' as *;
+@use './styles/component' as *;
+@use './styles/grid' as *;
+
+// Example usage:
+body {
+  background-color: $background;
+  color: $text;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+}
+

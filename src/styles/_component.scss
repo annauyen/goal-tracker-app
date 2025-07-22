@@ -1,0 +1,82 @@
+@use './theme' as *;
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+
+  &-primary {
+    background-color: $primary;
+    color: #fff;
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    border: 2px solid $primary;
+    color: $primary;
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+
+  &-ghost {
+    background: transparent;
+    color: $primary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: $surface;
+  color: $text;
+
+  &:focus {
+    border-color: $primary;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: $primary-light;
+  color: white;
+
+  &.success { background-color: $success; }
+  &.warning { background-color: $warning; }
+  &.error { background-color: $error; }
+}
